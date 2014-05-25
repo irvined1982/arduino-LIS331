@@ -11,11 +11,6 @@
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
- * $Rev: 158 $   
- * $Author: irvined $ 
- * $Date: 2012-10-31 22:42:17 +0000 (Wed, 31 Oct 2012) $  
- *
 */
 
 #include "LIS331.h"

@@ -11,11 +11,6 @@
  * GNU General Public License for more details.
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
- * $Rev: 118 $   
- * $Author: irvined $ 
- * $Date: 2012-04-08 10:19:00 +0100 (Sun, 08 Apr 2012) $  
- *
 */
 
 #ifndef LIS331_h
