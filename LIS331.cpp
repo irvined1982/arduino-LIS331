@@ -18,7 +18,7 @@
 #include "Wire.h"
 
 LIS331::LIS331(){
-	i2cAddress=25;
+	i2cAddress=0x18;
 	}
 
 
@@ -299,8 +299,27 @@ bool LIS331::getXValue(int16_t *val){
 	return true;
 }
 
+bool LIS331::setScale(byte scale){
+		byte setting;
+		if (readReg(LR_CTRL_REG4, &setting)){
+                        // zero-out previous setting
+			setting=setting<<4;
+			setting=setting>>4;
+			setting=setting|scale;
 
-	
-	
+			return writeReg(LR_CTRL_REG4,setting);
+		}
+		return false;
+		}
 
+bool LIS331::setHighPass(byte enable, byte mode, byte freq){
+		byte setting;
+		if (readReg(LR_CTRL_REG2, &setting)){
+                        // zero-out previous setting
+                        setting=B00000000;
+                        setting=enable|mode|freq;
 
+			return writeReg(LR_CTRL_REG2,setting);
+		}
+		return false;
+		}

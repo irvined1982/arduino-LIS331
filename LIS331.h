@@ -61,6 +61,29 @@
 #define LR_DATA_RATE_400 B00010000
 #define LR_DATA_RATE_1000 B00011000
 
+// Full scale selection (+- 2, 4, 8 G for LIS331DLH)
+
+#define LR_SCALE_2_G B00000000 // default
+#define LR_SCALE_4_G B00010000
+#define LR_SCALE_8_G B00110000
+
+// High-pass filter mode selection
+
+#define LR_HPF_MODE_NORM1 B00000000 // default
+#define LR_HPF_MODE_NORM2 B01100000
+#define LR_HPF_MODE_REF   B00100000
+
+// High-pass filter enable
+
+#define LR_HPF_DISABLE B00000000
+#define LR_HPF_ENABLE  B00010000
+
+// High-pass filter cutoff freq (See table 24)
+
+#define LR_HPF_CF_8  B00000000
+#define LR_HPF_CF_16 B00000001
+#define LR_HPF_CF_32 B00000010
+#define LR_HPF_CF_64 B00000011
 
 // Enable and disable channel.
 
@@ -100,6 +123,8 @@ class LIS331
 		bool getXValue(int16_t *val);
 		bool getZValue(int16_t *val);
 		bool getYValue(int16_t *val);
+                bool setScale(byte scale);
+                bool setHighPass(byte enable, byte mode, byte freq);
 };
 
 #endif
