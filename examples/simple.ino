@@ -17,6 +17,7 @@
 #include <Wire.h>
 LIS331 lis;
 void setup(){
+    Wire.begin();
     lis.setPowerStatus(LR_POWER_NORM);
     lis.setXEnable(true);
     lis.setYEnable(true);
